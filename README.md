@@ -17,6 +17,7 @@ Abre la terminal y escribe:
 
 ```sh
 composer install
+php artisan key:generate
 php artisan import:postalcodes
 php artisan serve
 ```
