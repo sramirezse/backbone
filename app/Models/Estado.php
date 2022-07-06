@@ -94,7 +94,7 @@ class Estado extends Model
     protected function dTipoAsenta(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => strtoupper($this->deleteTild($value)),
+            get: fn ($value) => ucfirst($this->deleteTild($value)),
         );
     }
 }
