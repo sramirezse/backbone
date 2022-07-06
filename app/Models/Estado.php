@@ -85,6 +85,12 @@ class Estado extends Model
             get: fn ($value) => strtoupper($this->deleteTild($value)),
         );
     }
+    protected function dCiudad(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => strtoupper($this->deleteTild($value)),
+        );
+    }
     protected function dTipoAsenta(): Attribute
     {
         return Attribute::make(

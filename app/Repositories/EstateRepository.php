@@ -7,6 +7,7 @@ use App\Models\Estado;
 class EstateRepository{
     public function getState($cp){
         $states = Estado::where('d_codigo', $cp)->get();
+        // dd($states);
         $state_info = Estado::where('d_codigo', $cp)->first();
         $settlements = [];
         foreach ($states as $s) {
@@ -23,7 +24,7 @@ class EstateRepository{
         }
         $result = [
             'zip_code' =>(String) $state_info->d_codigo,
-            'locality' => $state_info->D_mnpio,
+            'locality' => $state_info->d_ciudad,
             'federal_entity' =>[
                 'key' => (int) $state_info->c_estado,
                 'name' => $state_info->d_estado,
